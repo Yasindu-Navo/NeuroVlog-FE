@@ -27,7 +27,12 @@ function BlogList() {
             </button>
           </div>
         ))}
-      </div>
+          </div>
+          
+          {/* blogCardList */}
+          <div>
+              
+          </div>
     </div>
   );
 }
