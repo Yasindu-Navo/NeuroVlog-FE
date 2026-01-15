@@ -25,6 +25,17 @@ function Header() {
           Turn moments into stories and ideas into impact.
           Whether it's a single sentence or a full article, start creating with the power of AI by your side.
         </p>
+
+
+        <form className='flex justify-between max-w-lg max-sm:scale-75 mx-auto border border-gray-300 bg-white rounded overflow-hidden'>
+          <input type="text" placeholder='Search for the blogs'
+          className='w-full pl-4 outline-none ' required/>
+          <button
+            type='submit'
+          className='bg-primary text-white px-8 py-2 m-1.5 rounded hover:scale-105 transition-all cursor-pointer'
+          >Search</button>
+        </form>
+
         
           </div>
           <img src={assets.gradientBackground} className='absolute -top-50 -z-1 opacity-50' />
