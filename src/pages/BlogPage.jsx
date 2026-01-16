@@ -4,6 +4,7 @@ import { assets, blog_data, comments_data } from "../assets/assets";
 import NavBar from "../components/NavBar";
 import moment from "moment";
 import Footer from "../components/Footer";
+import Loading from "../components/Loading";
 
 const BlogPage = () => {
   const { id } = useParams();
@@ -138,7 +139,7 @@ const BlogPage = () => {
       <Footer />
     </div>
   ) : (
-    <div>Loading....</div>
+    <Loading />
   );
 };
 
