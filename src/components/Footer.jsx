@@ -1,20 +1,45 @@
 import React from "react";
-import { assets } from "../assets/assets";
+import { assets, footer_data } from "../assets/assets";
 
 function Footer() {
   return (
     <div className="px-6 md:px-16 lg:px-24 xl:px-32 bg-primary/3 ">
-      <div className="flex flex-col md:flex--row items-start justify-between gap-10 py-10 border-b border-gray-500/30 text-gray-300">
+      <div className="flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-gray-500/30 text-gray-300">
         {/* 1st column section */}
         <div className="">
           <img src={assets.logo} alt="logo" className="w-32 sm:w-44" />
-          <p className="max-w-[410px] mt-6 ">
+          <p className="max-w-[410px] mt-6 text-gray-500">
             {" "}
-            NeuroBlog is your intelligent writing companion. We combine AI
-            technology with creativity to help you craft meaningful stories,
-            share ideas, and explore new perspectives effortlessly.
+           An AI-powered platform to write, refine, and share your stories effortlessly.
           </p>
         </div>
+
+        <div className="flex flex-wrap justify-between w-full md:w-[45%] gap-5 ">
+
+          {footer_data.map((section,index) => (
+            <div key={index}>
+              <h3 className="font-semibold text-base text-gray-900 md:mb-5 mb-2">{section.title}</h3>
+              <ul className="text-sm space-y-1">
+                {section.links.map((link,i) => (
+                  <li key={i}>
+                    <a href="#" className="hover:underline transition text-gray-700/80">
+                        {link}
+                    </a>
+                  </li>
+                )
+
+                )}
+
+              </ul>
+
+            </div>
+          )
+
+          )}
+          
+      </div>
+
+
       </div>
 
       {/* copyright section */}
