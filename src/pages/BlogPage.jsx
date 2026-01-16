@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { assets, blog_data, comments_data } from "../assets/assets";
 import NavBar from "../components/NavBar";
 import moment from "moment";
+import Footer from "../components/Footer";
 
 const BlogPage = () => {
   const { id } = useParams();
@@ -118,9 +119,23 @@ const BlogPage = () => {
           </form>
         </div>
 
-              
+        {/* Share buttons */}
+        
+        <div className="">
+
+          <p className="font-semibold my-4">Share this article on social media</p>
+          <div className="flex">
+              <img src={assets.facebook_icon} width={50} alt="fb_icon" />
+              <img src={assets.twitter_icon} width={50} alt="twitter_icon" />
+              <img src={assets.googleplus_icon} width={50} alt="google_icon" />
+          </div>
+
+        </div>
+
+        
 
       </div>
+      <Footer />
     </div>
   ) : (
     <div>Loading....</div>
