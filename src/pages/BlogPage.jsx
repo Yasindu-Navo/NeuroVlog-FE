@@ -13,23 +13,27 @@ const BlogPage = () => {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
 
-  const fetchBlogData = async () => {
-    const blogItem = blog_data.find((item) => item._id === id);
-
-    setData(blogItem);
-  };
-
-  const fetchComments = async () => {
-    setComments(comments_data);
-  };
-
   const addComment = async (e) => {
     e.preventDefault();
   };
 
   useEffect(() => {
-    fetchBlogData();
+
+   const fetchBlogData = async () => {
+    const blogItem = blog_data.find((item) => item._id === id);
+
+    setData(blogItem);
+    };
+
+    
+  const fetchComments = async () => {
+    setComments(comments_data);
+  };
+    
+
+    
     fetchComments();
+    fetchBlogData();
   }, []);
 
   return data ? (
