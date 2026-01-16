@@ -18,7 +18,8 @@ const App = () => {
               <Route index element={<Dashboard />} />
               <Route path='addBlog' element={<AddBlog />} />
               <Route path='listBlog' element={<ListBlog />} />
-              <Route path='comments' element={<Comments />} />
+          <Route path='comments' element={<Comments />} />
+          </Route>
              
         
       </Routes>
