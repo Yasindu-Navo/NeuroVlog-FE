@@ -20,7 +20,6 @@ function Dashboard() {
   return (
     <div className="flex-1 p-4 md:p-10 bg-blue-50/50">
       <div className="flex flex-wrap gap-4 ">
-
         {/* card 1 */}
         <div className="flex items-center gap-4 bg-white p-4 min-w-58 rounded shadow cursor-pointer hover:scale-105 transition-all">
           <img src={assets.dashboard_icon_1} alt="" />
@@ -33,7 +32,7 @@ function Dashboard() {
           </div>
         </div>
 
-               {/* card 2 */}
+        {/* card 2 */}
         <div className="flex items-center gap-4 bg-white p-4 min-w-58 rounded shadow cursor-pointer hover:scale-105 transition-all">
           <img src={assets.dashboard_icon_2} alt="" />
 
@@ -45,7 +44,7 @@ function Dashboard() {
           </div>
         </div>
 
-                 {/* card 3 */}
+        {/* card 3 */}
         <div className="flex items-center gap-4 bg-white p-4 min-w-58 rounded shadow cursor-pointer hover:scale-105 transition-all">
           <img src={assets.dashboard_icon_3} alt="" />
 
@@ -57,16 +56,37 @@ function Dashboard() {
           </div>
         </div>
 
-{/* clsoing div of cards */}
+        {/* clsoing div of cards */}
       </div>
 
-
       <div>
-        
-</div>
+        <div className="flex items-center gap-3 m-4 mt-6 text-gray-600">
+          <img src={assets.dashboard_icon_4} alt="" />
+          <p>Latest Blogs</p>
+        </div>
 
 
+        <div className="relative max-w-4xl overflow-x-auto shadow rounded-lg scrollbar-hide bg-white">
 
+          <table className="w-full text-sm text-gray-500">
+            <thead className="text-xs text-gray-600 text-left uppercase">
+              <tr>
+                    <th scope="col" className="px-2 py-4">#</th>
+                    <th scope="col" className="px-2 py-4">Blog title</th>
+                    <th scope="col" className="px-2 py-4">Date</th>
+                <th scope="col" className="px-2 py-4">Status</th>
+                <th scope="col" className="px-2 py-4">Actions</th>
+                
+              </tr>
+
+
+            </thead>
+
+          </table>
+
+        </div>
+
+      </div>
     </div>
   );
 }
