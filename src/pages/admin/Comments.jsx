@@ -46,6 +46,22 @@ function Comments() {
         </div>
 
       </div>
+
+      <div className="relative h-4/5 max-w-3xl overflow-x-auto mt-4 bg-white shadow rounded-lg scrollbar-hide">
+        <table className="w-full text-sm text-gray-500">
+          <thead className="text-xs text-gray-700 text-left uppercase">
+            <tr>
+              <th scope="col" className="px-6 px-3">Blog Tittle & Comment</th>
+              <th scope="col" className="px-6 px-3 max-sm:hidden">Date</th>
+              <th scope="col" className="px-6 px-3">Action</th>
+            </tr>
+
+          </thead>
+
+        </table>
+        
+</div>
+
     </div>
   )
 }
