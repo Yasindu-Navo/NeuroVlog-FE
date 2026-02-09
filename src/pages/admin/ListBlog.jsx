@@ -15,7 +15,7 @@ function ListBlog() {
   },[])
 
   return (
-    <div className='felx-1 pt-5 px-5 sm:pt-12 sm:pl-16 bg-blue-50/50 '> 
+    <div className='flex-1 p-4 md:p-10 bg-blue-50/50'> 
       <h1 className='text-gray-600'>All Blogs</h1>
       
       {/* table */}
