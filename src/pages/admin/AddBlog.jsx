@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { assets } from "../../assets/assets";
+import Quill from "quill";
 
 function AddBlog() {
+
+  const editorRef = useRef(null);
+  const quillRef = useRef(null);
+
   const [image, setImage] = useState(false);
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
