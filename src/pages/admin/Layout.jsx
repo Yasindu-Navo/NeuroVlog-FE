@@ -2,6 +2,7 @@ import React from 'react'
 import { assets } from '../../assets/assets'
 import { Outlet, useNavigate } from 'react-router-dom'
 import SideBar from '../../components/admin/SideBar';
+import Footer from '../../components/Footer';
 
 function Layout() {
 
@@ -29,8 +30,12 @@ function Layout() {
       <div className='flex h-[calc(100vh-70px)]'>
         <SideBar />
         <Outlet />
-      </div>
 
+      </div>
+      <div>
+        <Footer />
+</div>
+      
 
     </>
   )

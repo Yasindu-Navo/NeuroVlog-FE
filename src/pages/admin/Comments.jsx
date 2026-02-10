@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import { comments_data } from "../../assets/assets";
+import { CommentTableItem } from "../../components/admin/CommentTableItem";
 
 
 function Comments() {
 
-  const [comments, setComments] = useState('');
+  const [comments, setComments] = useState([]);
   const [filter, setFilter] = useState('Not Approved');
 
   const fetchComments = async () => {
@@ -51,12 +52,25 @@ function Comments() {
         <table className="w-full text-sm text-gray-500">
           <thead className="text-xs text-gray-700 text-left uppercase">
             <tr>
+               <th scope="col" className="px-6 px-3">#</th>
               <th scope="col" className="px-6 px-3">Blog Tittle & Comment</th>
               <th scope="col" className="px-6 px-3 max-sm:hidden">Date</th>
               <th scope="col" className="px-6 px-3">Action</th>
             </tr>
 
           </thead>
+
+          <tbody>
+
+            {comments.filter((comment) => {
+              if (filter === "Approved") return comment.isApproved === true;
+              return comment.isApproved === false;
+            }).map((comment, index) => {
+              return(
+                <CommentTableItem key={comment._id} index={index} comment={comment} fetchComments={fetchComments} />
+              )
+            })}
+          </tbody>
 
         </table>
         

@@ -1,6 +1,6 @@
 import { assets } from "../../assets/assets";
 
-export const CommentTableItem = ({ comment, fetchComments }) => {
+export const CommentTableItem = ({ comment, fetchComments,index }) => {
     
     const { blog, createdAt, _id } = comment;
     const blogDate = new Date(createdAt);
@@ -10,6 +10,7 @@ export const CommentTableItem = ({ comment, fetchComments }) => {
     
     return (
         <tr className="border-y border-gray-300">
+            <td className="px-6 py-4">{index +1}</td>
             <td className="px-6 py-4">
                 <b className="font-medium text-gray-600">Blog  </b> : {blog.title}
                 <br/>
