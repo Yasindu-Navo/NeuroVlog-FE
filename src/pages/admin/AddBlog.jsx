@@ -12,6 +12,10 @@ function AddBlog() {
     e.preventDefault();
   };
 
+  const generateContent = async () => {
+    
+  }
+
   return (
     <form
       onSubmit={onSubmitHandler}
@@ -50,7 +54,19 @@ function AddBlog() {
           value={subtitle}
         />
 
-        
+        <p className="mt-4">Blog Description</p>
+        <div className="max-w-lg h-74 pb-16 sm:pb-10 pt-2 relative">
+          <button
+            type="button"
+            onClick={generateContent}
+            className="absolute bottom-1 right-2 ml-2 text-xs text-white bg-black/70 px-4 py-1.5 rounded hover:underline cursor-pointer"    
+          >
+                Generate with AI
+          </button>
+
+        </div>
+
+
       </div>
     </form>
   );
