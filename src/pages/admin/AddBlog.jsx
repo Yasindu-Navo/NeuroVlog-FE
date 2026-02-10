@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { assets } from "../../assets/assets";
+import { assets, blogCategories } from "../../assets/assets";
 import Quill from "quill";
 
 function AddBlog() {
-
   const editorRef = useRef(null);
   const quillRef = useRef(null);
 
@@ -17,17 +16,15 @@ function AddBlog() {
     e.preventDefault();
   };
 
-  const generateContent = async () => {
-    
-  }
+  const generateContent = async () => {};
 
   useEffect(() => {
     //intialize quill once
 
     if (!quillRef.current && editorRef.current) {
-      quillRef.current = new Quill(editorRef.current,{theme:'snow'})
+      quillRef.current = new Quill(editorRef.current, { theme: "snow" });
     }
-  },[])
+  }, []);
 
   return (
     <form
@@ -38,32 +35,41 @@ function AddBlog() {
         <p>Upload thumbnail</p>
         <label htmlFor="image">
           <img
-            src={!image? assets.upload_area : URL.createObjectURL(image)}
+            src={!image ? assets.upload_area : URL.createObjectURL(image)}
             className="mt-2 h-16 rounded cursor-pointer"
           />
           <input
-            type="file" id="image"
-            hidden required
-            onChange={(e) => { setImage(e.target.files[0]) }}
-            
+            type="file"
+            id="image"
+            hidden
+            required
+            onChange={(e) => {
+              setImage(e.target.files[0]);
+            }}
           />
         </label>
 
         <p className="mt-4">Blog Title</p>
-        <input type="text" 
+        <input
+          type="text"
           placeholder="type here"
           required
           className="w-full max-w-lg mt-2 p-2 border border-gray-300 outline-none rounded"
-          onChange={(e) => { setTitle(e.target.value) }}
+          onChange={(e) => {
+            setTitle(e.target.value);
+          }}
           value={title}
         />
 
-          <p className="mt-4">Sub title</p>
-        <input type="text" 
+        <p className="mt-4">Sub title</p>
+        <input
+          type="text"
           placeholder="type here"
           required
           className="w-full max-w-lg mt-2 p-2 border border-gray-300 outline-none rounded"
-          onChange={(e) => { setSubtitle(e.target.value) }}
+          onChange={(e) => {
+            setSubtitle(e.target.value);
+          }}
           value={subtitle}
         />
 
@@ -73,15 +79,40 @@ function AddBlog() {
           <button
             type="button"
             onClick={generateContent}
-            className="absolute bottom-1 right-2 ml-2 text-xs text-white bg-black/70 px-4 py-1.5 rounded hover:underline cursor-pointer"    
+            className="absolute bottom-1 right-2 ml-2 text-xs text-white bg-black/70 px-4 py-1.5 rounded hover:underline cursor-pointer"
           >
-                Generate with AI
+            Generate with AI
           </button>
-
         </div>
 
+        <p className="mt-4">Blog Category</p>
+        <select
+          onChange={(e) => setCategory(e.target.value)}
+          name="category"
+          className="mt-2 px-3 py-2 border text-gray-500 border-gray-300 outline-none rounded "
+        >
+          <option value="">Select Category</option>
+          {blogCategories.map((item, index) => {
+            return (
+              <option key={index} value={item}>
+                {item}
+              </option>
+            );
+          })}
+        </select>
+
+        <div className="flex gap-2 mt-4">
+          <p>Publish now</p>
+          <input type="checkbox" checked={isPublished} className="scale-125 cursor-pointer"
+            onChange={e => setIsPublished(e.target.checked)}
+             />
+          
+            </div>
+
+        <button type="submit" className="mt-8 w-40 h-10 bg-primary text-white rounded cursor-pointer text-sm  ">Add Blog</button>
 
       </div>
+
     </form>
   );
 }
